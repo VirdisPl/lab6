@@ -10,3 +10,15 @@ if __name__ == "__main__":
     args = parse_args()
     print(f"Input file: {args.input_file}")
     print(f"Output file: {args.output_file}")
+
+import json
+
+def read_json(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data
+
+if __name__ == "__main__":
+    args = parse_args()
+    data = read_json(args.input_file)
+    print(data)
