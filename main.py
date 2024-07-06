@@ -22,3 +22,13 @@ if __name__ == "__main__":
     args = parse_args()
     data = read_json(args.input_file)
     print(data)
+    
+def write_json(data, file_path):
+    with open(file_path, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4)
+
+if __name__ == "__main__":
+    args = parse_args()
+    data = read_json(args.input_file)
+    write_json(data, args.output_file)
+
